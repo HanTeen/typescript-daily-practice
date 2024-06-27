@@ -5,7 +5,7 @@ var message: string = "hello world"
 
 console.log(message)
 
-// -------------------------P2变量声明----------------------------
+// -------------------------P2变量声明START-------------------------
 
 var uname: string = "hanteen";
 var uname2: boolean; // 声明变量的类型，但没有初始值，变量值会设置为 undefined：
@@ -35,4 +35,25 @@ console.log(x)
 var uname9: undefined;  // undefined类型，用于初始化变量为一个未定义的值
 var uname10: never;     // 代表从不会出现的值
 
-console.log()
+// 变量作用域
+var global_num = 12;    // 全局变量
+class Numbers {
+    num_val = 13;       // 实例变量
+    static s_val = 14;  // 静态变量
+    store_num():void{
+        var inst_val = 15; // 局部变量
+        console.log(inst_val)
+    }
+}
+
+console.log("全局变量：", global_num);
+console.log("静态变量：", Numbers.s_val);
+console.log("实例变量：", new Numbers().num_val)
+
+// -------------------------P2变量声明END-------------------------
+
+// 算术、关系、逻辑、短路等常见运算符这里就不做练习了，所有语言大同小异。
+
+// -------------------------P3运算符START-------------------------
+
+// -------------------------P3运算符END-------------------------
