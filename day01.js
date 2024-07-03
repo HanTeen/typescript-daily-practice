@@ -1,8 +1,8 @@
 // 欢迎来学习TypeScript
-// -------------------------P1欢迎----------------------------
+// -------------------------P1 欢迎 ----------------------------
 var message = "hello world";
 console.log(message);
-// -------------------------P2变量声明-------------------------
+// -------------------------P2 变量声明 START-------------------------
 var uname = "hanteen";
 var uname2; // 声明变量的类型，但没有初始值，变量值会设置为 undefined：
 var uname3 = "any"; // 声明变量并初始值，但不设置类型，该变量可以是任意类型：
@@ -47,4 +47,72 @@ var Numbers = /** @class */ (function () {
 console.log("全局变量：", global_num);
 console.log("静态变量：", Numbers.s_val);
 console.log("实例变量：", new Numbers().num_val);
-console.log("局部变量：", new Numbers().store_num());
+// -------------------------P2 变量声明 END-------------------------
+// 常见运算符和条件语句这里就不做练习了，所有语言大同小异。
+// -------------------------P3 循环 START-------------------------
+var i = 1;
+for (i = 0; i < 10; i++) {
+    //console.log(i + 1);
+}
+var j;
+var k = [1, 2, 3];
+for (j in k) {
+    //console.log(k[j]);
+}
+// ES6 for of
+var jj = ['111', 222];
+for (var _i = 0, jj_1 = jj; _i < jj_1.length; _i++) {
+    var kk = jj_1[_i];
+    //console.log(kk);
+}
+/**
+ * every 用于检查数组中的所有元素是否满足给定条件。如果有一个值不满足该元素，则输出将为 false，否则将返回 true
+ * some  与every相反
+ **/
+var testArr = [1, 2, 3, 4];
+var res = testArr.every(function (ele, index, testArr) {
+    if (ele > 1) {
+        return true;
+    }
+    //console.log(ele, index, testArr);
+});
+//console.log(res); //false
+// filter 创建一个新数组，新数组中的元素都是符合指定条件过滤后的元素。
+var res2 = testArr.filter(function (ele, index, testArr) {
+    if (ele >= 1) {
+        return ele;
+    }
+});
+//console.log(res2);
+// -------------------------P3 循环 END-------------------------
+// -------------------------P3 函数 START-------------------------
+// 可选参数必须跟在必需参数后面,除非都是可选
+function testHan(x, y, z, o) {
+    if (o === void 0) { o = 5; }
+    return 12;
+}
+//console.log(testHan(1, 2));
+// 剩余参数
+function residue(xx) {
+    var hanten = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        hanten[_i - 1] = arguments[_i];
+    }
+    var res = '';
+    res = xx + hanten.join(' ');
+    console.log(res);
+}
+residue(1, '2', '3');
+// 匿名函数
+var ni = function () {
+    console.log('匿名函数');
+};
+ni();
+// 匿名函数自调用
+(function () {
+    console.log('匿名函数自调用');
+})();
+// 构造函数
+var gouzao = new Function("a", "b", "return a * b");
+console.log(gouzao(2, 3));
+// -------------------------P3 函数 END-------------------------
